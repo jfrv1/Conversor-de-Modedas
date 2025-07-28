@@ -12,8 +12,9 @@ public class MenuPresentacion extends Principal {
             "4) Real Brasileño → Dolar",
             "5) Dolar → Peso Colombiano",
             "6) Peso Colombiano → Dolar",
-            "7) Otro (Coloque el tipo de cambio abreviado en mayusculas, ej: MXN = USD)",
-            "8) Salir",
+            "7) Dolar a Peso Mexicano",
+            "8) Otro (Coloque el tipo de cambio abreviado en mayusculas, ej: MXN = USD)",
+            "9) Salir",
 
     };
     public String obtenerMenu(){

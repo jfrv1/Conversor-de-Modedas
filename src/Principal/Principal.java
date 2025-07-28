@@ -30,7 +30,7 @@ public class Principal {
                 }
             }
 
-            if (decision >=1 && decision <=7){
+            if (decision >=1 && decision <=8){
                switch (decision){
                    case 1 -> {cambio = "USD"; destino = "ARS";}
                    case 2 -> {cambio = "USD"; destino = "ARS";}
@@ -38,7 +38,8 @@ public class Principal {
                    case 4 -> {cambio = "USD"; destino = "ARS";}
                    case 5 -> {cambio = "USD"; destino = "ARS";}
                    case 6 -> {cambio = "USD"; destino = "ARS";}
-                   case 7 -> {System.out.println("Ingrese su moneda a cotizar");
+                   case 7 -> {cambio = "USD"; destino = "MXN";}
+                   case 8 -> {System.out.println("Ingrese su moneda a cotizar");
                        cambio = scanner.next();
                        System.out.println("Ingrese su moneda destino");
                        destino = scanner.next();
@@ -58,9 +59,10 @@ public class Principal {
             TiposCambio tipos = ExchangeApiClient.obtenerTasaCambio(cambio, destino, cantidad);
 
             if (tipos != null && tipos.conversion_rate() !=null) {
-                System.out.println("Tasa de conversion: " + tipos.conversion_rate());
+                System.out.println("Tipo de Cambio: " + tipos.conversion_rate());
                 System.out.println("Moneda base: " + tipos.base_code());
-                System.out.println("Cambio: " + cambio + "=" + tipos.conversion_result());
+                System.out.println("Moneda destino: " + destino
+                        + "=" + tipos.conversion_result());
             } else {
                 System.out.println("Error: No se puede obtener el resultado");
             }
